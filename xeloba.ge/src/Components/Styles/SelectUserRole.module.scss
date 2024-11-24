@@ -1,0 +1,56 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  padding-top: 100px;
+  @include d-flex(center, start, row, 0px);
+}
+
+.options {
+  width: 40%;
+  @include d-flex(center, center, column, 50px);
+}
+
+.client,
+.craftsman {
+  text-align: center;
+  @include d-flex(center, center, row, 0px);
+  @include btn(
+    100%,
+    100px,
+    $color-primary,
+    white,
+    2px solid $color-primary,
+    4px,
+    18.5px,
+    1.5px
+  );
+}
+
+.client:hover,
+.craftsman:hover {
+  color: $color-primary;
+  @include btn-hover(transparent, 2px solid $color-primary, 1.5s);
+}
+
+@include combinedMobileAndTabletScreens {
+  .parentContainer {
+    padding-top: 0px;
+  }
+
+  .options {
+    width: 100%;
+  }
+}
+
+@include mediumScreen {
+  .parentContainer {
+    padding-top: 0px;
+  }
+
+  .options {
+    width: 70%;
+  }
+}

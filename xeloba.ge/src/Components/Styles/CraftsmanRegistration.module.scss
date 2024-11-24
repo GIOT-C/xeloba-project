@@ -1,0 +1,291 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  @include d-flex(center, start, row, 0px);
+}
+
+.formContainer {
+  width: 100%;
+  background-color: $color-primary;
+  padding: 50px 150px;
+  border-radius: 8px;
+}
+
+.header {
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.registrationForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 150px;
+  row-gap: 25px;
+}
+
+.inputCard {
+    color: white;
+    position: relative;
+  
+    &__labelBox {
+      color: gray;
+      font-size: small;
+      padding-bottom: 5px;
+    }
+  
+    &__relative{
+      position: relative;
+    }
+  
+    &__input, &__textarea {
+      width: 100%;
+      height: 48px;
+      border-radius: 4px;
+      border: none;
+      background-color: #E8F0FE;
+      color: $color-primary;
+      padding-left: 5px;
+    }
+  
+    &__input:focus, &__textarea:focus {
+      outline: none;
+    }
+  
+    &__textarea{
+      padding: 5px;
+      resize: none;
+    }
+  
+    &__imgInput, &__textarea{
+      height: 80px;
+    }
+  
+    &__inputError{
+      border-bottom: 3px solid crimson;
+    }
+  
+    &__errorMessages{
+      color: crimson;
+      font-size: small;
+    }
+  
+    &__eyeIconContainer{
+      position: absolute;
+      top: 31%;
+      left: 92%;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+
+  .showExperienceInfo, .showPriceInfo, .showCallFeeInfo, .showMoreInfo {
+    position: absolute;
+    width: 100%;
+    background-color: #5A639C;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    z-index: 2;
+  
+  }
+  
+  .showExperienceInfo{
+    top: -100%;
+  }
+  
+  .showPriceInfo{
+    top: -190%;
+  }
+  
+  .showCallFeeInfo{
+    top: -130%;
+  }
+  
+  .showMoreInfo{
+    top: -66%;
+  }
+  
+  .hideAdditionalInfo{
+  display: none;
+  }
+  
+  .xmarkContainer{
+    @include d-flex(end, start, row, 0px);
+  }
+  
+  .faQuestion{
+    position: absolute;
+    left: 103%;
+    top: 31%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  
+  .faCircleXmark{
+    color: crimson;
+    text-align: end;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .buttonContainer{
+    padding-top: 40px;
+    @include d-flex(center, start, row, 0px);
+  }
+  
+  .submitButton{
+    @include btn(43%, 48px, #159895, white, 2px solid #159895, 4px, 18.5px, 1.5px)
+  }
+  
+  .submitButton:hover{
+    @include btn-hover(transparent, 2px solid white, 1.5s)
+  }
+
+  
+@include mobileScreen {
+  .formContainer {
+    padding: 50px 40px;
+  }
+
+  .registrationForm {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0px;
+  }
+
+  .inputCard {
+    &__imgInput{
+      height: 48px;
+    }
+
+    &__eyeIconContainer{
+      left: 90%;
+    }
+  }
+
+  .showExperienceInfo{
+    top: -130%;
+  }
+
+  .showPriceInfo{
+    top: -280%;
+  }
+
+  .showCallFeeInfo{
+    top: -130%;
+  }
+
+  .showMoreInfo{
+    top: -100%;
+  }
+
+  .faQuestion{
+    left: 105%;
+  }
+
+  .submitButton{
+    width: 100%;
+  }
+}
+
+
+@include tabletScreen {
+  .formContainer {
+    padding: 50px 60px;
+  }
+
+  .registrationForm {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0px;
+  }
+
+  .inputCard__imgInput{
+    height: 48px;
+  }
+
+  .showPriceInfo{
+    top: -220%;
+  }
+
+  .showCallFeeInfo{
+    top: -130%;
+  }
+
+  .showMoreInfo{
+    top: -85%;
+  }
+
+  .faQuestion{
+    left: 105%;
+  }
+
+  .submitButton{
+    width: 100%;
+  }
+}
+
+
+@include mediumScreen {
+  .formContainer {
+    padding: 50px 40px;
+  }
+
+  .registrationForm {
+    column-gap: 50px;
+  }
+
+  .showPasswordInfo{
+    top: -160%;
+  }
+
+  .showPriceInfo{
+    top: -250%;
+  }
+
+  .showMoreInfo{
+    top: -85%;
+  }
+}
+
+
+@include largeScreen {
+  .formContainer {
+    padding: 50px 100px;
+  }
+
+  .registrationForm {
+    column-gap: 100px;
+  }
+
+  .showPasswordInfo{
+    top: -160%;
+  }
+
+  .showPriceInfo{
+    top: -250%;
+  }
+
+  .showMoreInfo{
+    top: -85%;
+  }
+}
+
+
+@include extraLargeScreen {
+
+  .showPasswordInfo{
+    top: -160%;
+  }
+
+  .showPriceInfo{
+    top: -250%;
+  }
+
+  .showMoreInfo{
+    top: -85%;
+  }
+}

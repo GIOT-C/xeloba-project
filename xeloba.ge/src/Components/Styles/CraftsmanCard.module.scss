@@ -1,0 +1,80 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+
+.craftsmanCard{
+    width: 100%;
+    background-color: $color-primary;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    .imgContainer{
+        width: 100%;
+        height: 300px;
+        text-align: center;
+    }
+
+    &__userImg{
+        width: 80%;
+        height: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    &__verificationStatus {
+        @include d-flex(center, start, row, 10px);
+        padding: 10px 0;
+    }
+
+    &__userIdentity, &__profession, &__price{
+        text-align: center;
+    }
+
+    &__profession{
+        font-weight: 600;
+        color: #FF6600;
+    }
+
+    &__location{
+        @include d-flex(center, center, row, 10px);
+        padding: 10px 0;
+    }
+
+    &__price{
+        padding-top: 10px;
+    }
+}
+
+.faCircleCheck{
+    color: green;
+}
+
+.faCircleXmark{
+    color: red;
+}
+
+.faCircleCheck, .faCircleXmark{
+    font-size: large;
+}
+
+@include mobileScreen {
+    .craftsmanCard__userImg{
+        width: 90%;
+    }
+}
+
+@include tabletScreen {
+    .craftsmanCard__userImg{
+        width: 65%;
+    }
+}
+
+@include largeScreen {
+    .craftsmanCard__userImg{
+        width: 90%;
+    }
+}
+

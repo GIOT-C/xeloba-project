@@ -1,0 +1,91 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.parentContainer {
+  @include d-flex(center, start, row, 0px);
+}
+
+.calcInputContainer {
+  width: 50%;
+  @include d-flex(center, start, column, 15px);
+}
+
+.calcInput {
+  width: 100%;
+
+  &__labelContainer {
+    color: gray;
+    font-size: small;
+    padding-bottom: 5px;
+  }
+
+  &__input {
+    background-color: #e8f0fe;
+    width: 100%;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+    padding-left: 10px;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+}
+
+.clearBtn {
+  @include btn(
+    100%,
+    44px,
+    #a34343,
+    white,
+    2px solid #a34343,
+    4px,
+    large,
+    1.5px
+  );
+}
+
+.clearBtn:hover {
+  @include btn-hover(transparent, 2px solid white, 1.5s);
+}
+
+
+
+@include mobileScreen {
+  .parentContainer {
+    padding: 0px 15px;
+  }
+
+  .calcInputContainer {
+    width: 100%;
+  }
+}
+
+@include tabletScreen {
+  .parentContainer {
+    padding: 0px;
+  }
+
+  .calcInputContainer {
+    width: 70%;
+    gap: 20px;
+  }
+}
+
+@include largeScreen {
+  .parentContainer {
+    padding: 20px 0px;
+  }
+
+  .calcInputContainer {
+    width: 80%;
+  }
+}
+
+@include extraLargeScreen {
+  .calcInputContainer {
+    width: 60%;
+  }
+}

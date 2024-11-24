@@ -1,0 +1,25 @@
+@mixin d-flex ($jc, $ai, $fd, $gap){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+    gap: $gap;
+}
+
+@mixin btn($w, $h, $bg_c, $c, $b, $b_r, $f_s, $l_s){
+    width: $w;
+    height: $h;
+    background-color: $bg_c;
+    color: $c;
+    border: $b;
+    border-radius: $b_r;
+    font-size: $f_s;
+    letter-spacing: $l_s;
+    cursor: pointer;
+}
+
+@mixin btn-hover($bg_c, $border, $transition){
+    background-color: $bg_c;
+    border: $border;
+    transition: $transition;
+}

@@ -1,0 +1,196 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  background-color: $color-primary;
+  padding: 50px 0px 50px 0px;
+  border-radius: 8px;
+}
+
+.authorizationContainer {
+  color: white;
+  @include d-flex(center, center, column, 0px);
+}
+
+.header {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.authorization,
+.verification {
+  width: 30%;
+}
+
+.inputCard {
+  padding-top: 30px;
+
+  &__labelBox {
+    color: gray;
+    font-size: small;
+    padding-bottom: 5px;
+  }
+
+  &__relativeBox {
+    position: relative;
+  }
+
+  &__input,
+  &__inputError {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    border: none;
+    background-color: #e8f0fe;
+    color: $color-primary;
+    padding: 5px;
+  }
+
+  &__inputError {
+    border-bottom: 3px solid crimson;
+  }
+
+  &__input:focus,
+  &__inputError:focus {
+    outline: none;
+  }
+
+  &__errorMessage {
+    color: crimson;
+    font-size: small;
+    padding-top: 5px;
+  }
+}
+
+.buttonContainer {
+  padding: 40px 0 40px 0;
+}
+
+.button {
+  @include btn(
+    100%,
+    44px,
+    #159895,
+    white,
+    2px solid #159895,
+    4px,
+    large,
+    1.5px
+  );
+}
+
+.button:hover {
+  @include btn-hover(transparent, 2px solid white, 1.5s);
+}
+
+.faEye {
+  color: $color-primary;
+  position: absolute;
+  left: 94%;
+  top: 30%;
+  cursor: pointer;
+}
+
+.checkboxContainer {
+  padding-top: 10px;
+  display: flex;
+  align-items: end;
+  font-size: large;
+
+  &__label {
+    padding-left: 10px;
+  }
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: hsl(127, 100%, 82%);
+}
+
+.verificationInfo {
+  text-align: center;
+}
+
+.resendCodeContainer {
+  padding: 20px 0;
+  @include d-flex(center, start, row, 10px);
+
+  &__resend {
+    color: #ff6600;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+
+.codeValidityPeriod {
+  padding-bottom: 20px;
+  @include d-flex(center, start, row, 10px);
+
+  &__timer,
+  &__timerOuting {
+    font-weight: 600;
+    padding-top: 3.5px;
+  }
+
+  &__timerOuting {
+    color: red;
+  }
+}
+
+@include mobileScreen {
+  .parentContainer {
+    padding: 50px 40px;
+  }
+  .authorization,
+  .verification {
+    width: 100%;
+  }
+
+  .faEye {
+    left: 90%;
+  }
+
+  .resendCodeContainer {
+    @include d-flex(start, center, column, 0px);
+  }
+}
+
+@include tabletScreen {
+  .parentContainer {
+    padding: 50px 40px;
+  }
+  .authorization,
+  .verification {
+    width: 100%;
+  }
+}
+
+@include mediumScreen {
+  .authorization,
+  .verification {
+    width: 60%;
+  }
+}
+
+@include largeScreen {
+  .authorization,
+  .verification {
+    width: 40%;
+  }
+
+  .faEye {
+    left: 92%;
+  }
+}
+
+@include extraLargeScreen {
+  .faEye {
+    left: 92%;
+  }
+}

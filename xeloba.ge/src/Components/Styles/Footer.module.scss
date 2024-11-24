@@ -1,0 +1,197 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  background-color: $color-secondary;
+  padding: 20px 0px;
+}
+
+.mainContainer {
+  @include d-flex(center, start, row, 0px);
+}
+
+.footer {
+  width: 90%;
+  padding: 20px 0px;
+  @include d-flex(start, start, row, 50px);
+  color: white;
+  border-bottom: 2px solid white;
+
+  &__leftSide,
+  &__rightSide {
+    width: 50%;
+    @include d-flex(center, start, row, 0px);
+
+    &__childContainer {
+      width: 60%;
+    }
+  }
+
+  &__rightSide {
+
+    &__contact {
+      cursor: pointer;
+      font-size: large;
+      padding-top: 10px;
+    }
+
+    &__socialNetworks {
+      padding-top: 10px;
+      font-size: 35px;
+      @include d-flex(start, start, row, 30px);
+    }
+  }
+}
+
+.faLocationDot {
+  font-size: large;
+  padding-right: 10px;
+}
+
+.faSquarePhone, .faEnvelope{
+  padding-right: 13px;
+}
+
+.faEnvelope{
+  font-size: medium;
+}
+
+.faFacebook,
+.faSquareInstagram {
+  color: white;
+}
+
+.faSquareWhatsapp,
+.faSquareYoutube {
+  cursor: pointer;
+  padding-top: 1.8px;
+}
+
+.copyright {
+  padding-top: 30px;
+  color: white;
+  @include d-flex(center, start, row, 5px);
+
+  &__text {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+.creatorsContainer {
+  padding-top: 20px;
+  @include d-flex(center, center, row, 0px);
+}
+
+.creatorsChildContainer {
+  width: 90%;
+  @include d-flex(center, center, row, 0px);
+}
+
+.creators {
+  width: 40%;
+  @include d-flex(center, center, row, 0px);
+  color: white;
+}
+
+.creatorsTitle {
+  width: 33%;
+  text-align: end;
+}
+
+.developers {
+  width: 67%;
+  @include d-flex(center, start, column, 10px);
+}
+
+.dev {
+  @include d-flex(center, center, row, 10px);
+}
+
+.devImg {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.devName {
+  width: 130px;
+}
+
+.devsocialNetwork {
+  cursor: pointer;
+  color: white;
+  font-size: large;
+}
+
+@include combinedMobileAndTabletScreens {
+  .footer {
+    @include d-flex(start, start, column, 20px);
+
+    &__leftSide,
+    &__rightSide {
+      width: 100%;
+
+      &__childContainer {
+        width: 100%;
+      }
+    }
+  }
+
+  .copyright__text {
+    text-align: start;
+  }
+
+  .creators {
+    width: 100%;
+    @include d-flex(center, start, column, 0px);
+  }
+
+  .creatorsTitle {
+    width: 100%;
+    text-align: start;
+    border-bottom: 2px solid white;
+  }
+
+  .developers {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+
+@include mediumScreen {
+  .footer {
+    &__leftSide,
+    &__rightSide {
+      width: 100%;
+
+      &__childContainer {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer__leftSide__aboutUs {
+    padding: 10px 0 20px 0;
+  }
+
+  .creators {
+    width: 60%;
+  }
+}
+
+@include largeScreen {
+  .footer {
+    &__leftSide,
+    &__rightSide {
+      width: 100%;
+
+      &__childContainer {
+        width: 70%;
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+
+.parentContainer {
+  min-height: 100vh;
+  padding: 200px 0 70px 0;
+  @include d-flex(center, start, row, 0px);
+}
+
+.mainContainer {
+  width: 70%;
+  padding: 30px 0;  
+  background-color: $color-primary;
+  color: white;
+  border-radius: 5px;
+}
+
+.header{
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid white
+}
+
+.personalSpace {
+  @include d-flex(start, center, column, 0px);
+  padding: 30px 0;
+}
+
+.imgContainer {
+  width: 30%;
+  padding-bottom: 20px;
+  position: relative;
+
+  &__userImg {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+  }
+
+  &__changeImg {
+    width: 40px;
+    height: 40px;
+    background-color: #2e3830;
+    color: white;
+    @include d-flex(center, center, row, 0px);
+    // opacity: 0.5;
+    position: absolute;
+    top: 73%;
+    left: 80%;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+
+  &__changeImg :hover {
+    color: green;
+    font-size: large;
+    transition: 1s;
+  }
+
+  &__errorMessage {
+    font-size: small;
+    color: crimson;
+  }
+}
+
+.imgInput {
+  display: none;
+}
+
+.personalInfo {
+  width: 100%;
+}
+
+.userInfo {
+
+  @include d-flex(start, center, row, 0px);
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+
+  &__keyBox,
+  &__valueBox {
+    width: 50%;
+    padding: 10px 0 10px 10%;
+    font-size: 15px;
+
+    &__readOnlyInput,
+    &__editInput {
+      // width: 260px;
+      width: 80%;
+      height: 40px;
+      border: none;
+      font-size: 15px;
+      border-radius: 5px;
+      padding-left: 5px;
+    }
+
+    &__readOnlyInput {
+      color: white;
+      background-color: transparent;
+    }
+
+    &__editInput {
+      background-color: #e8f0fe;
+    }
+
+    &__editTextarea{
+      width: 80%;
+      padding: 5px;
+      resize: none;
+      border: none;
+      border-radius: 5px;
+      background-color: #e8f0fe;
+     }
+
+    &__readOnlyInput:focus,
+    &__editInput:focus,
+    &__editTextarea:focus {
+      outline: none;
+    }
+
+    &__errorMessage{
+        font-size: small;
+        color: crimson;
+    }
+
+    &__relative{
+      position: relative;
+    }
+
+   &__moreInfoContainer{
+    @include d-flex(start, center, row, 0px);
+   }
+
+   &__moreInfoText{
+width: 80%;
+   }
+  }
+}
+
+.buttonContainer{
+  @include d-flex(center, start, row, 0px);
+
+  &__saveButton{
+width: 40%;
+height: 40px;
+letter-spacing: 2px;
+font-size: 18.5px;
+cursor: pointer;
+  }
+}
+
+
+.faCircleCheck {
+  color: green;
+  margin-right: 5px;
+}
+
+.faCircleXmark {
+  color: red;
+  margin-right: 5px;
+}
+
+.faPen {
+  padding-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.faEye, .faEyeSlash{
+position: absolute;
+top: 30%;
+left: 73%;
+cursor: pointer;
+}
+
+.faEyeSlash{
+  color: $color-primary;
+}
+
+@include combinedMobileAndTabletScreens {
+  .parentContainer {
+    padding: 70px 0 70px 0;
+  }
+
+  .mainContainer {
+    width: 90%;
+  }
+  
+  .imgContainer {
+    width: 70%;
+  }
+
+  .userInfo {
+    @include d-flex(start, center, column, 0px);
+
+    &__keyBox,
+  &__valueBox {
+    width: 90%;
+  }
+  }
+}

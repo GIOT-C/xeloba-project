@@ -1,0 +1,29 @@
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.emptyResult{
+    width: 100%;
+    text-align: center;
+    padding: 100px 0 ;
+   
+}
+
+.craftsmanContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+@include combinedMobileAndTabletScreens {
+    .craftsmanContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include mediumScreen {
+    .craftsmanContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

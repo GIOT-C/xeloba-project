@@ -1,0 +1,165 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+
+.parentContainer {
+  @include d-flex(center, start, row, 0px);
+}
+
+.userProfileCard{
+  width: 50%;
+  background-color: gray;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.userImgContainer{
+  width: 100%;
+  height: 300px;
+  @include d-flex(center, start, row, 0px);
+
+  &__userImg {
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}
+
+.contact {
+  @include d-flex(center, center, row, 20px);
+  padding: 10px;
+
+  &__phone, &__mail, &__whatsapp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include d-flex(center, center, row, 10px);
+  }
+
+  &__phone{
+background-color: green;
+  }
+
+  &__mail{
+background-color: #E46062;
+  }
+
+  &__whatsapp{
+    background-color: #00d757;
+  }
+  
+}
+
+.info {
+  border: 3px solid $color-primary;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+
+  &__key {
+    background-color: $color-primary;
+    padding: 5px;
+    letter-spacing: 1px;
+  }
+
+  &__value {
+    padding: 5px;
+  }
+
+  &__statusIsTrue, &__statusIsFalse, &__profession{
+    font-weight: 600;
+  }
+
+  &__statusIsTrue{
+    color: #00d757
+  }
+
+  &__statusIsFalse{
+    color: #D91656;
+  }
+
+  &__profession{
+    color: $color-primary;
+  }
+
+//   &__valueBox{
+// padding: 5px;
+// @include d-flex(center, center, row, 5px);
+// font-weight: 600;
+// // color: #D91656;
+// color: #00d757;
+//   }
+}
+
+.faCircleCheck {
+  color: green;
+  padding-top: 5px;
+}
+
+.faCircleXmark {
+  color: red;
+}
+
+.faPhone {
+  color: white;
+  font-size: large;
+}
+
+.faEnvelope{
+  color: white;
+  font-size: x-large;
+}
+
+.faSquareWhatsapp {
+  font-size: 30px;
+  color: white;
+}
+
+.faPhone, .faEnvelope, .faSquareWhatsapp{
+  cursor: pointer;
+}
+
+@include mobileScreen  {
+  .userProfileCard{
+    width: 100%;
+  }
+
+  .userImgContainer__userImg{
+    width: 90%;
+  }
+}
+
+
+@include tabletScreen  {
+  .userProfileCard{
+    width: 100%;
+  }
+
+  .userImgContainer__userImg{
+    width: 65%;
+  }
+}
+
+
+@include mediumScreen  {
+  .userProfileCard{
+    width: 70%;
+  }
+
+  .userImgContainer__userImg{
+    width: 65%;
+  }
+}
+
+@include largeScreen  {
+  .userProfileCard{
+    width: 60%;
+  }
+
+  .userImgContainer__userImg{
+    width: 60%;
+  }
+}

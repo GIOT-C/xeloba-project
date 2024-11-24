@@ -1,0 +1,62 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+
+.parentContainer {
+  width: 100%;
+  background-color: $color-secondary;
+  @include d-flex(center, start, row, 0px);
+  padding-top: 95px;
+  position: fixed;
+  z-index: 8;
+}
+
+.filter {
+  width: 90%;
+  padding: 10px 0;
+  @include d-flex(space-between, start, row, 0px);
+}
+
+.selectContainer {
+  width: 27%;
+
+  &__select {
+    width: 100%;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  &__select:focus {
+    outline: none;
+  }
+}
+
+.button {
+  @include btn(11%, 44px, #A34343, white, 2px solid #A34343, 4px, large, 1.5px)
+}
+
+.button:hover{
+  @include btn-hover(transparent, 2px solid white, 1.5s)
+}
+
+@media only screen and (max-width: 1024px) {
+  .parentContainer {
+    padding-top: 104px;
+    position: static;
+  }
+
+  .filter {
+    @include d-flex(start, start, column, 30px);
+  }
+
+  .selectContainer {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+

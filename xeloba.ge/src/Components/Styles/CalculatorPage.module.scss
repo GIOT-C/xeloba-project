@@ -1,0 +1,66 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  background-color: $color-primary;
+  border-radius: 8px;
+  padding: 20px 0;
+}
+
+.header{
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.CalcContainer{
+  @include d-flex(space-between, start, row, 20px);
+}
+
+
+.inputContainer,
+.outputContainer {
+  width: 50%;
+  color: white;
+  padding-top: 30px;
+}
+
+@include combinedMobileAndTabletScreens {
+  .parentContainer {
+    padding: 20px 10px;
+  }
+
+  .CalcContainer {
+    @include d-flex(start, start, column, 20px);
+  }
+
+  .inputContainer,
+  .outputContainer {
+    width: 100%;
+  }
+}
+
+
+@include mediumScreen {
+  .parentContainer {
+    padding: 30px;
+  }
+
+  .CalcContainer {
+    @include d-flex(start, start, column, 20px);
+  }
+
+  .inputContainer,
+  .outputContainer {
+    width: 100%;
+  }
+}
+
+// @include largeScreen {
+//   .inputContainer,
+//   .outputContainer {
+//     padding: 10px 0;
+//   }
+// }

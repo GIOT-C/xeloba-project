@@ -1,0 +1,114 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navContainer {
+  width: 100%;
+  background-color: $color-secondary;
+  @include d-flex(center, start, row, 0px);
+  position: fixed;
+  z-index: 10;
+}
+
+.nav {
+  width: 90%;
+  padding: 10px 0;
+  @include d-flex(start, center, row, 0px);
+}
+
+.logoContainer {
+  width: 20%;
+  @include d-flex(space-between, center, row, 0px);
+
+  &__menuBarIcon {
+    color: white;
+    font-size: xx-large;
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.logoImg {
+  width: 80px;
+  height: 80px;
+}
+
+.mobileNavigation,
+.desktopNavigation {
+  width: 80%;
+  @include d-flex(end, center, row, 3.6%);
+}
+
+.navElement {
+  color: white;
+  text-decoration: none;
+  background-color: $color-primary;
+  padding: 10px;
+  @include d-flex(start, center, row, 5px);
+  border-radius: 4px;
+  border: 2px solid $color-primary;
+  letter-spacing: 0.5px;
+}
+
+.navElement:hover {
+  @include btn-hover(transparent, 2px solid white, 1.5s)
+}
+
+.selectedNavElement {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.faAddressCard,
+.faMagnifyingGlass,
+.faCalculator {
+  margin-top: 3px;
+}
+
+.outlet{
+    width: 100%;
+    padding: 200px 0 50px 0;
+    @include d-flex(center, start, row, 0px);
+}
+
+.outletInCenter{
+    width: 90%;
+}
+
+@media only screen and (max-width: 1024px){
+    .nav {
+        @include d-flex(start, start, column, 20px);
+      }
+    
+      .logoContainer {
+        width: 100%;
+    
+        &__menuBarIcon {
+          display: block;
+        }
+      }
+    
+      .mobileNavigation,
+      .desktopNavigation {
+        width: 100%;
+        @include d-flex(start, start, column, 30px);
+      }
+    
+      .desktopNavigation {
+        display: none;
+      }
+    
+      .navElement {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .outlet{
+        padding: 50px 0 50px 0;
+    }
+}

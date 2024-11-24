@@ -1,0 +1,126 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  @include d-flex(center, start, row, 0px);
+}
+
+.formContainer {
+  width: 100%;
+  background-color: $color-primary;
+  padding: 50px 0px;
+  border-radius: 8px;
+  color: white;
+}
+
+.header {
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.registrationForm {
+  width: 100%;
+  @include d-flex(start, center, column, 0px);
+  gap: 25px;
+}
+
+.inputCard {
+  width: 30%;
+
+  &__labelBox {
+    color: gray;
+    font-size: small;
+    padding-bottom: 5px;
+  }
+
+  &__relative {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e8f0fe;
+    color: $color-primary;
+    padding-left: 5px;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__inputError {
+    border-bottom: 3px solid crimson;
+  }
+
+  &__errorMessages {
+    color: crimson;
+    font-size: small;
+  }
+
+  &__eyeIconContainer {
+    position: absolute;
+    top: 31%;
+    left: 92%;
+    color: $color-primary;
+    cursor: pointer;
+  }
+
+}
+
+.buttonContainer {
+  padding-top: 40px;
+  @include d-flex(center, start, row, 0px);
+}
+
+.submitButton {
+    @include btn(30%, 48px, #159895, white, 2px solid #159895, 4px, 18.5px, 1.5px)
+}
+
+.submitButton:hover {
+    @include btn-hover(transparent, 2px solid white, 1.5s)
+}
+
+
+@include mobileScreen {
+      .inputCard {
+      width: 80%;
+
+      &__eyeIconContainer{
+        left: 90%;
+      }
+      }
+    
+      .submitButton {
+        width: 80%;
+      }
+}
+
+
+@include tabletScreen {
+      .inputCard {
+      width: 70%;
+
+      &__eyeIconContainer{
+        left: 90%;
+      }
+      }
+
+      .submitButton {
+        width: 70%;
+      }
+}
+
+@include mediumScreen {
+      .inputCard {
+      width: 50%;
+      }
+
+      .submitButton {
+        width: 50%;
+      }
+}

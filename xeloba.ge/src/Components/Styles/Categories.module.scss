@@ -1,0 +1,33 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+
+  &__card {
+    @include btn(100%, 100px, $color-primary, white, 2px solid $color-primary, 8px, 18.5px, 1px);
+    @include d-flex(center, center, row, 0px);
+    text-align: center;
+  }
+
+  &__card:hover {
+    color: $color-primary;
+    @include btn-hover(white, 2px solid $color-primary, 1.5s)
+  }
+}
+
+@include combinedMobileAndTabletScreens {
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+
+@include mediumScreen {
+  .categories {
+    gap: 25px;
+  }
+}
